@@ -10,10 +10,14 @@ function ButtonList(props) {
     <div>
       <Feed
         onFeedButtonClick = {props.onFeedButtonClick} />
-      <Play />
-      <Rest />
-      <Wash />
-      <Blood />
+      <Play
+        onPlayButtonClick = {props.onPlayButtonClick}/>
+      <Rest
+        onRestButtonClick = {props.onRestButtonClick}/>
+      <Wash
+        onWashButtonClick = {props.onWashButtonClick}/>
+      <Blood
+        onBloodButtonClick = {props.onBloodButtonClick}/>
     </div>
   )
 }

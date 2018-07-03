@@ -15,6 +15,10 @@ class Tam extends React.Component {
     };
     this.updateStats = this.updateStats.bind(this);
     this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
+    this.handleRestButtonClick = this.handleRestButtonClick.bind(this);
+    this.handleBloodButtonClick = this.handleBloodButtonClick.bind(this);
+    this.handleWashButtonClick = this.handleWashButtonClick.bind(this);
+    this.handlePlayButtonClick = this.handlePlayButtonClick.bind(this);
   }
 
   componentDidMount(){
@@ -52,7 +56,7 @@ class Tam extends React.Component {
     }
   }
   handlePlayButtonClick() {
-    let newAmusementMeter = this.state.newAmusementMeter;
+    let newAmusementMeter = this.state.amusementMeter;
     if( newAmusementMeter > 95){
       this.setState({amusementMeter: 100})
     } else {
@@ -83,7 +87,12 @@ class Tam extends React.Component {
           ageMeterValue = {this.state.ageMeter}
           />
         <ButtonList
-          onFeedButtonClick = {this.handleFeedButtonClick} />
+          onFeedButtonClick = {this.handleFeedButtonClick}
+          onPlayButtonClick = {this.handlePlayButtonClick}
+          onWashButtonClick = {this.handleWashButtonClick}
+          onBloodButtonClick = {this.handleBloodButtonClick}
+          onRestButtonClick = {this.handleRestButtonClick}
+          />
         <Image />
       </div>
     );

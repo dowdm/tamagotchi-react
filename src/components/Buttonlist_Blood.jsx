@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Blood() {
+function Blood(props) {
   return(
     <div>
-      <button>Blood of Young</button>
+      <button onClick={props.onBloodButtonClick} >Blood of Young</button>
     </div>
   )
 }

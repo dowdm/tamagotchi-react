@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Rest() {
+function Rest(props) {
   return(
     <div>
-      <button>Rest</button>
+      <button onClick={props.onRestButtonClick}>Rest</button>
     </div>
   )
 }

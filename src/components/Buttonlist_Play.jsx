@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Play() {
+function Play(props) {
   return(
     <div>
-      <button>Play</button>
+      <button onClick={props.onPlayButtonClick}>Play</button>
     </div>
   )
 }

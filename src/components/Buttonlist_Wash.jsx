@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Wash() {
+function Wash(props) {
   return(
     <div>
-      <button>Wash</button>
+      <button onClick={props.onWashButtonClick}>Wash</button>
     </div>
   )
 }
