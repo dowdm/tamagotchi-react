@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 function Age(props) {
@@ -8,5 +9,8 @@ function Age(props) {
     </div>
   );
 }
+Age.propTypes = {
+  ageMeterValue: PropTypes.number,
+};
 
 export default Age;

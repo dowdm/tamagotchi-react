@@ -1,5 +1,6 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
+import PropTypes from 'prop-types';
 
 function Amusement(props) {
   return(
@@ -9,5 +10,8 @@ function Amusement(props) {
     </div>
   );
 }
+Amusement.propTypes = {
+  amusementMeterValue: PropTypes.number,
+};
 
 export default Amusement;

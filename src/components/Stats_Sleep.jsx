@@ -1,5 +1,6 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
+import PropTypes from 'prop-types';
 
 function Sleep(props) {
   return(
@@ -9,5 +10,9 @@ function Sleep(props) {
     </div>
   );
 }
+
+Sleep.propTypes = {
+  sleepMeterValue: PropTypes.number,
+};
 
 export default Sleep;

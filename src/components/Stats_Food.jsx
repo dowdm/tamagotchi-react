@@ -1,5 +1,6 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
+import PropTypes from 'prop-types';
 
 function Food(props) {
 
@@ -10,5 +11,7 @@ function Food(props) {
     </div>
   );
 }
-
+Food.propTypes = {
+  foodMeterValue: PropTypes.number,
+};
 export default Food;
