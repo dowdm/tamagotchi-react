@@ -15,7 +15,8 @@ class Tam extends React.Component {
       playing: false,
       washing: false,
       eating: false,
-      sleeping: false
+      sleeping: false,
+      bloodLust: false
     };
     this.updateStats = this.updateStats.bind(this);
     this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
@@ -61,6 +62,8 @@ class Tam extends React.Component {
     } else {
       this.setState({sleepMeter: newSleepMeter+30})
     }
+    this.setState({sleeping: true})
+    setTimeout(() => this.setState({sleeping: false}), 3000)
   }
   handlePlayButtonClick() {
     let newAmusementMeter = this.state.amusementMeter;
@@ -69,9 +72,13 @@ class Tam extends React.Component {
     } else {
       this.setState({amusementMeter: newAmusementMeter+5})
     }
+    this.setState({playing: true})
+    setTimeout(() => this.setState({playing: false}), 3000)
   }
   handleWashButtonClick() {
-      this.setState({hygieneMeter: 100})
+    this.setState({hygieneMeter: 100})
+    this.setState({washing: true})
+    setTimeout(() => this.setState({washing: false}), 3000)
   }
   handleBloodButtonClick() {
     let newAgeMeter = this.state.ageMeter;
@@ -80,6 +87,8 @@ class Tam extends React.Component {
     } else {
       this.setState({ageMeter: newAgeMeter-2})
     }
+    this.setState({bloodLust: true})
+    setTimeout(() => this.setState({bloodLust: false}), 3000)
   }
 
   render(){
@@ -105,8 +114,8 @@ class Tam extends React.Component {
           sleeping = {this.state.sleeping}
           eating = {this.state.eating}
           washing = {this.state.washing}
-          playing = {this.state.playing} />
-
+          playing = {this.state.playing}
+          bloodLust = {this.state.bloodLust}/>
       </div>
     );
   }
