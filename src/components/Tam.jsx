@@ -11,7 +11,11 @@ class Tam extends React.Component {
       sleepMeter: 100,
       amusementMeter: 100,
       hygieneMeter: 100,
-      ageMeter: 0
+      ageMeter: 0,
+      playing: false,
+      washing: false,
+      eating: false,
+      sleeping: false
     };
     this.updateStats = this.updateStats.bind(this);
     this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
@@ -46,7 +50,10 @@ class Tam extends React.Component {
     } else {
       this.setState({foodMeter: newFoodMeter+10})
     }
+    this.setState({eating: true})
+    setTimeout(() => this.setState({eating: false}), 3000)
   }
+
   handleRestButtonClick() {
     let newSleepMeter = this.state.sleepMeter;
     if( newSleepMeter > 70){
@@ -93,7 +100,13 @@ class Tam extends React.Component {
           onBloodButtonClick = {this.handleBloodButtonClick}
           onRestButtonClick = {this.handleRestButtonClick}
           />
-        <Image />
+        <Image
+          ageMeter = {this.state.ageMeter}
+          sleeping = {this.state.sleeping}
+          eating = {this.state.eating}
+          washing = {this.state.washing}
+          playing = {this.state.playing} />
+
       </div>
     );
   }
