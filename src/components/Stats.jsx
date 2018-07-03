@@ -5,12 +5,13 @@ import Sleep from './Stats_Sleep';
 import Amusement from './Stats_Amusement';
 import Hygiene from './Stats_Hygiene';
 
-function Stats() {
+function Stats(props) {
   return(
-    <div>
+    <div className='stats'>
       <Age/>
-      <div>
-        <Food/>
+      <div className='status-bars'>
+        <Food
+          foodMeterValue={props.foodMeterValue} />
         <Sleep/>
         <Amusement/>
         <Hygiene/>

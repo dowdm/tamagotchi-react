@@ -5,14 +5,15 @@ import Rest from './Buttonlist_Rest';
 import Wash from './Buttonlist_Wash';
 import Blood from './Buttonlist_Blood';
 
-function ButtonList() {
+function ButtonList(props) {
   return(
     <div>
-      <Feed/>
-      <Play/>
-      <Rest/>
-      <Wash/>
-      <Blood/>
+      <Feed
+        onFeedButtonClick = {props.onFeedButtonClick} />
+      <Play />
+      <Rest />
+      <Wash />
+      <Blood />
     </div>
   )
 }

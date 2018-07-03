@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Feed() {
+function Feed(props) {
   return(
     <div>
-      <button>Feed</button>
+      <button onClick={props.onFeedButtonClick}>Feed</button>
     </div>
   )
 }
