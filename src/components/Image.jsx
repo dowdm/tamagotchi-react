@@ -17,43 +17,43 @@ function Image(props) {
   if (props.ageMeter < 10){
     if (props.eating) {
       return(
-        <div>
+        <div className='image'>
           <img src={babyTamEating}/>
         </div>
       );
     } else if (props.washing) {
       return(
-        <div>
+        <div className='image'>
           <img src={babyTamWashing}/>
         </div>
       );
     } else if (props.sleeping) {
       return(
-        <div>
+        <div className='image'>
           <img src={babyTamSleeping}/>
         </div>
       );
     } else if (props.playing) {
       return(
-        <div>
+        <div className='image'>
           <img src={babyTamPlaying}/>
         </div>
       );
     } else if (props.bloodLust) {
       return(
-        <div>
+        <div className='image'>
           <img src={blood}/>
         </div>
       );
     } else if (props.living === false) {
       return(
-        <div>
+        <div className='image'>
           <img src={dead}/>
         </div>
       );
     } else {
       return(
-        <div>
+        <div className='image'>
           <img src={babyTam}/>
         </div>
       );
@@ -61,43 +61,43 @@ function Image(props) {
   } else {
     if (props.eating) {
       return(
-        <div>
+        <div className='image'>
           <img src={tamEating}/>
         </div>
       );
     } else if (props.washing) {
       return(
-        <div>
+        <div className='image'>
           <img src={tamWashing}/>
         </div>
       );
     } else if (props.sleeping) {
       return(
-        <div>
+        <div className='image'>
           <img src={tamSleeping}/>
         </div>
       );
     } else if (props.playing) {
       return(
-        <div>
+        <div className='image'>
           <img src={tamPlaying}/>
         </div>
       );
     } else if (props.bloodLust) {
       return(
-        <div>
+        <div className='image'>
           <img src={blood}/>
         </div>
       );
     } else if (props.living === false) {
       return (
-        <div>
+        <div className='image'>
           <img src={dead}/>
         </div>
       );
     } else {
       return(
-        <div>
+        <div className='image'>
           <img src={tam}/>
         </div>
       );

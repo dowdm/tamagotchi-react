@@ -39,13 +39,14 @@ class Tam extends React.Component {
     let newAmusementMeter = this.state.amusementMeter;
     let newHygieneMeter = this.state.hygieneMeter;
     let newAgeMeter = this.state.ageMeter;
+    let newLiving = false;
     this.setState({foodMeter: newFoodMeter-5});
     this.setState({sleepMeter: newSleepMeter-1});
     this.setState({amusementMeter: newAmusementMeter-4});
     this.setState({hygieneMeter: newHygieneMeter-2});
     this.setState({ageMeter: newAgeMeter+0.25});
     if( this.state.foodMeter === 0 || this.state.sleepMeter === 0 || this.state.amusementMeter === 0 || this.state.hygieneMeter === 0 || this.state.ageMeter === 100){
-      this.setState({living: false})
+      this.setState({living: newLiving});
     }
   }
 
@@ -99,7 +100,16 @@ class Tam extends React.Component {
   render(){
     if (this.state.living){
       return (
-        <div>
+        <div className='tam'>
+          <style jsx>{`
+              .tam {
+                margin: 50px;
+              }
+              h1 {
+                text-align: center;
+              }
+            `}
+          </style>
           <h1>Tam!</h1>
           <Stats
             foodMeterValue = {this.state.foodMeter}
@@ -107,15 +117,15 @@ class Tam extends React.Component {
             amusementMeterValue = {this.state.amusementMeter}
             hygieneMeterValue = {this.state.hygieneMeter}
             ageMeterValue = {this.state.ageMeter}
-            />
+          />
           <ButtonList
             onFeedButtonClick = {this.handleFeedButtonClick}
             onPlayButtonClick = {this.handlePlayButtonClick}
             onWashButtonClick = {this.handleWashButtonClick}
             onBloodButtonClick = {this.handleBloodButtonClick}
             onRestButtonClick = {this.handleRestButtonClick}
-            />
-          <Image
+          />
+        <Image className='image'
             ageMeter = {this.state.ageMeter}
             sleeping = {this.state.sleeping}
             eating = {this.state.eating}
@@ -128,11 +138,17 @@ class Tam extends React.Component {
     } else {
       return (
         <div>
-          <h1>Tam Be Dead!</h1>       
+          <style jsx>{`
+              h1 {
+                text-align: center;
+              }
+            `}
+          </style>
+          <h1>Tam Be Dead!</h1>
           <Image
             living={this.state.living}/>
         </div>
-      )
+      );
     }
   }
 }

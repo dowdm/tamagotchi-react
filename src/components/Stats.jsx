@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 function Stats(props) {
   return(
     <div className='stats'>
+      <h1>STATUS:</h1>
       <Age
         ageMeterValue={props.ageMeterValue}
       />

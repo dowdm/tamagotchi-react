@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 function ButtonList(props) {
   return(
-    <div>
+    <div className='.navbar'>
       <Feed
         onFeedButtonClick = {props.onFeedButtonClick} />
       <Play

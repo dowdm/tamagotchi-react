@@ -6,6 +6,15 @@ import Tam from './Tam';
 function App(){
   return (
     <div>
+      <style jsx global>{`
+          .image {
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            width: 800px;
+          }
+        `}
+      </style>
       <Switch>
         <Route exact path='/' component={Tam} />
         <Route component={Error404} />
