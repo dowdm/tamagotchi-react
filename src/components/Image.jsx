@@ -10,6 +10,7 @@ import tamEating from '../assets/images/tam-eating.gif';
 import tamPlaying from '../assets/images/tam-playing.gif';
 import tamWashing from '../assets/images/tam-washing.gif';
 import tamSleeping from '../assets/images/tam-sleeping.gif';
+import dead from '../assets/images/dead.png';
 import PropTypes from 'prop-types';
 
 function Image(props) {
@@ -42,6 +43,12 @@ function Image(props) {
       return(
         <div>
           <img src={blood}/>
+        </div>
+      );
+    } else if (props.living === false) {
+      return(
+        <div>
+          <img src={dead}/>
         </div>
       );
     } else {
@@ -82,6 +89,12 @@ function Image(props) {
           <img src={blood}/>
         </div>
       );
+    } else if (props.living === false) {
+      return (
+        <div>
+          <img src={dead}/>
+        </div>
+      );
     } else {
       return(
         <div>
@@ -91,6 +104,7 @@ function Image(props) {
     }
   }
 }
+
 Image.propTypes = {
   ageMeter: PropTypes.number,
   eating: PropTypes.bool,
@@ -98,6 +112,7 @@ Image.propTypes = {
   sleeping: PropTypes.bool,
   playing: PropTypes.bool,
   bloodLust: PropTypes.bool,
+  living: PropTypes.bool
 };
 
 export default Image;
