@@ -13,19 +13,27 @@ class Tam extends React.Component {
       hygiene: 100,
       age: 0
     };
-    this.updateFoodMeter = this.updateFoodMeter.bind(this);
+    this.updateStats = this.updateStats.bind(this);
     this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
   }
 
   componentDidMount(){
-    this.updateStats = setInterval(() =>
-    this.updateFoodMeter(), 1000);
+    this.updateTam = setInterval(() =>
+    this.updateStats(), 1000);
   }
 
-  updateFoodMeter() {
+  updateStats() {
     let newFoodMeter = this.state.foodMeter;
-    this.setState({foodMeter: newFoodMeter-1})
-  }
+    let newSleepMeter = this.state.sleepMeter;
+    let newAmusementMeter = this.state.amusementMeter;
+    let newHygieneMeter = this.state.hygieneMeter;
+    let newAge = this.state.age;
+    this.setState({foodMeter: newFoodMeter-5})
+    this.setState({sleepMeter: newSleepMeter-1})
+    this.setState({amusementMeter: newAmusementMeter-3})
+    this.setState({hygiene: newHygieneMeter-2})
+    this.setState({age: newAge+0.25})
+    }
 
   handleFeedButtonClick() {
     let newFoodMeter = this.state.foodMeter;
@@ -33,7 +41,7 @@ class Tam extends React.Component {
       this.setState({foodMeter: 100})
     } else {
       this.setState({foodMeter: newFoodMeter+10})
-    }    
+    }
   }
 
   render(){
