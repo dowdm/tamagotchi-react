@@ -10,8 +10,8 @@ class Tam extends React.Component {
       foodMeter: 100,
       sleepMeter: 100,
       amusementMeter: 100,
-      hygiene: 100,
-      age: 0
+      hygieneMeter: 100,
+      ageMeter: 0
     };
     this.updateStats = this.updateStats.bind(this);
     this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
@@ -27,12 +27,12 @@ class Tam extends React.Component {
     let newSleepMeter = this.state.sleepMeter;
     let newAmusementMeter = this.state.amusementMeter;
     let newHygieneMeter = this.state.hygieneMeter;
-    let newAge = this.state.age;
+    let newAgeMeter = this.state.ageMeter;
     this.setState({foodMeter: newFoodMeter-5})
     this.setState({sleepMeter: newSleepMeter-1})
-    this.setState({amusementMeter: newAmusementMeter-3})
-    this.setState({hygiene: newHygieneMeter-2})
-    this.setState({age: newAge+0.25})
+    this.setState({amusementMeter: newAmusementMeter-4})
+    this.setState({hygieneMeter: newHygieneMeter-2})
+    this.setState({ageMeter: newAgeMeter+0.25})
     }
 
   handleFeedButtonClick() {
@@ -43,13 +43,45 @@ class Tam extends React.Component {
       this.setState({foodMeter: newFoodMeter+10})
     }
   }
+  handleRestButtonClick() {
+    let newSleepMeter = this.state.sleepMeter;
+    if( newSleepMeter > 70){
+      this.setState({sleepMeter: 100})
+    } else {
+      this.setState({sleepMeter: newSleepMeter+30})
+    }
+  }
+  handlePlayButtonClick() {
+    let newAmusementMeter = this.state.newAmusementMeter;
+    if( newAmusementMeter > 95){
+      this.setState({amusementMeter: 100})
+    } else {
+      this.setState({amusementMeter: newAmusementMeter+5})
+    }
+  }
+  handleWashButtonClick() {
+      this.setState({hygieneMeter: 100})
+  }
+  handleBloodButtonClick() {
+    let newAgeMeter = this.state.ageMeter;
+    if( newAgeMeter < 2 ){
+      this.setState({ageMeter: 0})
+    } else {
+      this.setState({ageMeter: newAgeMeter-2})
+    }
+  }
 
   render(){
     return (
       <div>
         <h1>Tam!</h1>
         <Stats
-          foodMeterValue = {this.state.foodMeter} />
+          foodMeterValue = {this.state.foodMeter}
+          sleepMeterValue = {this.state.sleepMeter}
+          amusementMeterValue = {this.state.amusementMeter}
+          hygieneMeterValue = {this.state.hygieneMeter}
+          ageMeterValue = {this.state.ageMeter}
+          />
         <ButtonList
           onFeedButtonClick = {this.handleFeedButtonClick} />
         <Image />

@@ -1,11 +1,11 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
 
-function Hygiene() {
+function Hygiene(props) {
   return(
     <div>
       Hygiene:
-      <ProgressBar now={100}/>
+      <ProgressBar now={props.hygieneMeterValue}/>
     </div>
   );
 }

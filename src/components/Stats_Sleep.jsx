@@ -1,11 +1,11 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
 
-function Sleep() {
+function Sleep(props) {
   return(
     <div>
       Sleep:
-      <ProgressBar now={100}/>
+      <ProgressBar now={props.sleepMeterValue}/>
     </div>
   );
 }

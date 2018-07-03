@@ -1,10 +1,10 @@
 import React from 'react';
 
 
-function Age() {
+function Age(props) {
   return(
     <div>
-      Age:
+      Age:{props.ageMeterValue}
     </div>
   );
 }

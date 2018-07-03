@@ -8,13 +8,21 @@ import Hygiene from './Stats_Hygiene';
 function Stats(props) {
   return(
     <div className='stats'>
-      <Age/>
+      <Age
+        ageMeterValue={props.ageMeterValue}
+        />
       <div className='status-bars'>
         <Food
           foodMeterValue={props.foodMeterValue} />
-        <Sleep/>
-        <Amusement/>
-        <Hygiene/>
+        <Sleep
+          sleepMeterValue={props.sleepMeterValue}
+          />
+        <Amusement
+          amusementMeterValue={props.amusementMeterValue}
+          />
+        <Hygiene
+          hygieneMeterValue={props.hygieneMeterValue}
+          />
       </div>
     </div>
   );

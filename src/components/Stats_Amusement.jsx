@@ -1,11 +1,11 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
 
-function Amusement() {
+function Amusement(props) {
   return(
     <div>
       Amusement:
-      <ProgressBar now={100}/>
+      <ProgressBar now={props.amusementMeterValue}/>
     </div>
   );
 }
