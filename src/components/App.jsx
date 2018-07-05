@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
 import TamList from './TamList';
+import TamDetail from './TamDetail';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
@@ -30,20 +31,20 @@ class App extends React.Component {
     let newMasterTamList = Object.assign({}, this.state.masterTamList);
     Object.keys(newMasterTamList).forEach(tamId => {
       newMasterTamList[tamId].ageMeter = this.state.masterTamList[tamId].ageMeter + 0.25;
+      newMasterTamList[tamId].foodMeter = this.state.masterTamList[tamId].foodMeter - 5;
+      newMasterTamList[tamId].sleepMeter = this.state.masterTamList[tamId].sleepMeter - 1;
+      newMasterTamList[tamId].amusementMeter = this.state.masterTamList[tamId].amusementMeter - 4;
+      newMasterTamList[tamId].hygieneMeter = this.state.masterTamList[tamId].hygieneMeter -2;
+      if(this.state.masterTamList[tamId].foodMeter === 0 || this.state.masterTamList[tamId].sleepMeter === 0 || this.state.masterTamList[tamId].amusementMeter === 0 || this.state.masterTamList[tamId].hygieneMeter === 0 || this.state.masterTamList[tamId].ageMeter === 100){
+        newMasterTamList[tamId].living = false;
+      }
     });
-    this.setState({masterTamList: newMasterTamList})
+    this.setState({masterTamList: newMasterTamList});
 
-  //   let newFoodMeter = this.state.foodMeter;
-  //   let newSleepMeter = this.state.sleepMeter;
-  //   let newAmusementMeter = this.state.amusementMeter;
-  //   let newHygieneMeter = this.state.hygieneMeter;
-  //   let newAgeMeter = this.state.ageMeter;
+
+
   //   let newLiving = false;
-  //   this.setState({foodMeter: newFoodMeter-5});
-  //   this.setState({sleepMeter: newSleepMeter-1});
-  //   this.setState({amusementMeter: newAmusementMeter-4});
-  //   this.setState({hygieneMeter: newHygieneMeter-2});
-  //   this.setState({ageMeter: newAgeMeter+0.25});
+
   //   if( this.state.foodMeter === 0 || this.state.sleepMeter === 0 || this.state.amusementMeter === 0 || this.state.hygieneMeter === 0 || this.state.ageMeter === 100){
   //     this.setState({living: newLiving});
   //   }
@@ -109,6 +110,10 @@ class App extends React.Component {
   // }
 
   render() {
+    let optionalSelectedTamContent = null;
+     if (this.state.selectedTam != null){
+       optionalSelectedTamContent =  <TamDetail selectedTam={this.state.masterTamList[this.state.selectedTam]}/>;
+     }
     return (
       <div>
         {/* <style jsx global>{`
@@ -122,7 +127,12 @@ class App extends React.Component {
         `}
       </style> */}
         <Switch>
-          <Route exact path='/' render={(props)=><TamList tamList={this.state.masterTamList} onTamSelection={this.handleTamSelection} onAdopt={this.handleAdopt} selectedTam={this.state.selectedTam}/>} />
+          <Route exact path='/' render={()=>
+            <div>
+              <TamList tamList={this.state.masterTamList} onTamSelection={this.handleTamSelection} onAdopt={this.handleAdopt} selectedTam={this.state.selectedTam}/>
+              {optionalSelectedTamContent}
+            </div>
+          }/>
           <Route component={Error404} />
         </Switch>
       </div>
