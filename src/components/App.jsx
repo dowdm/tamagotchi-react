@@ -13,7 +13,7 @@ class App extends React.Component {
     };
     this.handleAdopt = this.handleAdopt.bind(this);
     this.handleTamSelection = this.handleTamSelection.bind(this);
-    // this.updateStats = this.updateStats.bind(this);
+    this.updateStats = this.updateStats.bind(this);
     // this.handleFeedButtonClick = this.handleFeedButtonClick.bind(this);
     // this.handleRestButtonClick = this.handleRestButtonClick.bind(this);
     // this.handleBloodButtonClick = this.handleBloodButtonClick.bind(this);
@@ -22,11 +22,17 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    // this.updateTam = setInterval(() =>
-    //   this.updateStats(), 1000);
+    this.updateTam = setInterval(() =>
+      this.updateStats(), 1000);
   }
 
-  // updateStats() {
+  updateStats() {
+    let newMasterTamList = Object.assign({}, this.state.masterTamList);
+    Object.keys(newMasterTamList).forEach(tamId => {
+      newMasterTamList[tamId].ageMeter = this.state.masterTamList[tamId].ageMeter + 0.25;
+    });
+    this.setState({masterTamList: newMasterTamList})
+
   //   let newFoodMeter = this.state.foodMeter;
   //   let newSleepMeter = this.state.sleepMeter;
   //   let newAmusementMeter = this.state.amusementMeter;
@@ -41,7 +47,7 @@ class App extends React.Component {
   //   if( this.state.foodMeter === 0 || this.state.sleepMeter === 0 || this.state.amusementMeter === 0 || this.state.hygieneMeter === 0 || this.state.ageMeter === 100){
   //     this.setState({living: newLiving});
   //   }
-  // }
+  }
 
   handleAdopt(newTam) {
     var newTamId = v4();
