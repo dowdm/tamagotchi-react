@@ -17,8 +17,8 @@ function ButtonList(props) {
         onFeedButtonClick = {props.onFeedButtonClick} />
       <Rest
         onRestButtonClick = {props.onRestButtonClick}/>
-        <Play
-          onPlayButtonClick = {props.onPlayButtonClick}/>
+      <Play
+        onPlayButtonClick = {props.onPlayButtonClick}/>
       <Wash
         onWashButtonClick = {props.onWashButtonClick}/>
       <Blood

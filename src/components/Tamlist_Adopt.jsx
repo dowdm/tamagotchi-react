@@ -3,17 +3,6 @@ import PropTypes from 'prop-types';
 
 function Adopt(props){
   let _name = null;
-  let _foodMeter = 100;
-  let _sleepMeter = 100;
-  let _amusementMeter = 100;
-  let _hygieneMeter = 100;
-  let _ageMeter = 0;
-  let _playing = false;
-  let _washing = false;
-  let _eating = false;
-  let _sleeping = false;
-  let _bloodLust = false;
-  let _living = true;
 
   function handleAdoptSubmission(event) {
     event.preventDefault();

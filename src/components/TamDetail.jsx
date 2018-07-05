@@ -32,7 +32,7 @@ function TamDetail() {
           onBloodButtonClick = {this.handleBloodButtonClick}
           onRestButtonClick = {this.handleRestButtonClick}
         />
-      <Image className='image'
+        <Image className='image'
           ageMeter = {this.state.ageMeter}
           sleeping = {this.state.sleeping}
           eating = {this.state.eating}
