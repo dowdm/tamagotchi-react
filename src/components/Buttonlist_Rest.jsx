@@ -15,5 +15,6 @@ function Rest(props) {
 }
 Rest.propTypes = {
   onRestButtonClick: PropTypes.func,
+  selectedTamId: PropTypes.string
 };
 export default Rest;

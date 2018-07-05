@@ -13,6 +13,7 @@ function Wash(props) {
 }
 Wash.propTypes = {
   onWashButtonClick: PropTypes.func,
+  selectedTamId: PropTypes.string
 };
 
 export default Wash;

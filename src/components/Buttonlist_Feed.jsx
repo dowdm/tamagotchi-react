@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 function Feed(props) {
 
   function handleButtonClick() {
-    console.log(props.selectedTamId);
     props.onFeedButtonClick(props.selectedTamId);
   }
 
@@ -17,6 +16,7 @@ function Feed(props) {
 
 Feed.propTypes = {
   onFeedButtonClick: PropTypes.func,
+  selectedTamId: PropTypes.string
 };
 
 export default Feed;

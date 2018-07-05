@@ -38,6 +38,7 @@ ButtonList.propTypes = {
   onRestButtonClick: PropTypes.func,
   onWashButtonClick: PropTypes.func,
   onBloodButtonClick: PropTypes.func,
+  selectedTamId: PropTypes.string
 };
 
 export default ButtonList;

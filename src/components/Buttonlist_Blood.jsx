@@ -13,6 +13,7 @@ function Blood(props) {
 }
 
 Blood.propTypes = {
-  onBloodButtonClick: PropTypes.func
+  onBloodButtonClick: PropTypes.func,
+  selectedTamId: PropTypes.string
 };
 export default Blood;

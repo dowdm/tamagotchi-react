@@ -15,5 +15,6 @@ function Play(props) {
 }
 Play.propTypes = {
   onPlayButtonClick: PropTypes.func,
+  selectedTamId: PropTypes.string
 };
 export default Play;
