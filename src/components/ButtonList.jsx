@@ -9,12 +9,16 @@ import PropTypes from 'prop-types';
 function ButtonList(props) {
   return(
     <div className='.navbar'>
+      <style jsx>{`
+          display: flex;
+          justify-content: space-around;
+        `}</style>
       <Feed
         onFeedButtonClick = {props.onFeedButtonClick} />
-      <Play
-        onPlayButtonClick = {props.onPlayButtonClick}/>
       <Rest
         onRestButtonClick = {props.onRestButtonClick}/>
+        <Play
+          onPlayButtonClick = {props.onPlayButtonClick}/>
       <Wash
         onWashButtonClick = {props.onWashButtonClick}/>
       <Blood

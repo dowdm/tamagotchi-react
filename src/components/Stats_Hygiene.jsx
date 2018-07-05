@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Hygiene(props) {
   return(
     <div>
-      Hygiene:
+      <h4>Hygiene:</h4>
       <ProgressBar now={props.hygieneMeterValue}/>
     </div>
   );

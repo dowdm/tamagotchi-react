@@ -6,7 +6,7 @@ function Food(props) {
 
   return(
     <div>
-      Food:
+      <h4>Food:</h4>
       <ProgressBar now={props.foodMeterValue}/>
     </div>
   );

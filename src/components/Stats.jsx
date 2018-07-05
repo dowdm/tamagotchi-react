@@ -10,9 +10,11 @@ function Stats(props) {
   return(
     <div className='stats'>
       <h1>STATUS:</h1>
+      <hr/>
       <Age
         ageMeterValue={props.ageMeterValue}
       />
+      <br/>
       <div className='status-bars'>
         <Food
           foodMeterValue={props.foodMeterValue} />

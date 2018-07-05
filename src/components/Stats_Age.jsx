@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Age(props) {
   return(
     <div>
-      Age:{props.ageMeterValue}
+      <h4>Age:{props.ageMeterValue}</h4>
     </div>
   );
 }

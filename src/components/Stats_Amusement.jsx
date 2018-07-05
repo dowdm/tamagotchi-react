@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Amusement(props) {
   return(
     <div>
-      Amusement:
+      <h4>Amusement:</h4>
       <ProgressBar now={props.amusementMeterValue}/>
     </div>
   );

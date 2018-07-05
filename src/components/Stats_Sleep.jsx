@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Sleep(props) {
   return(
     <div>
-      Sleep:
+      <h4>Sleep:</h4>
       <ProgressBar now={props.sleepMeterValue}/>
     </div>
   );
