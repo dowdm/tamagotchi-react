@@ -5,8 +5,8 @@ import ButtonList from './ButtonList';
 
 
 function TamDetail(props) {
-    if (props.selectedTam.living){
-      return (
+  if (props.selectedTam.living){
+    return (
       <div className='tam'>
         <style jsx>{`
             .tam {
@@ -17,7 +17,7 @@ function TamDetail(props) {
             }
           `}
         </style>
-        <h1>Tam!</h1>
+        <h1>{props.selectedTam.name}</h1>
         <Stats
           foodMeterValue = {props.selectedTam.foodMeter}
           sleepMeterValue = {props.selectedTam.sleepMeter}
@@ -25,13 +25,16 @@ function TamDetail(props) {
           hygieneMeterValue = {props.selectedTam.hygieneMeter}
           ageMeterValue = {props.selectedTam.ageMeter}
         />
-        {/* <ButtonList
-          onFeedButtonClick = {this.handleFeedButtonClick}
-          onPlayButtonClick = {this.handlePlayButtonClick}
-          onWashButtonClick = {this.handleWashButtonClick}
-          onBloodButtonClick = {this.handleBloodButtonClick}
-          onRestButtonClick = {this.handleRestButtonClick}
-        /> */}
+
+        <ButtonList
+          onFeedButtonClick = {props.onFeedButtonClick}
+          onPlayButtonClick = {props.onPlayButtonClick}
+          onWashButtonClick = {props.onWashButtonClick}
+          onBloodButtonClick = {props.onBloodButtonClick}
+          onRestButtonClick = {props.onRestButtonClick}
+          selectedTamId = {props.selectedTamId}
+        />
+
         <Image className='image'
           ageMeter = {props.selectedTam.ageMeter}
           sleeping = {props.selectedTam.sleeping}
@@ -51,7 +54,7 @@ function TamDetail(props) {
             }
           `}
         </style>
-        <h1>Tam Be Dead!</h1>
+        <h1>{props.selectedTam.name} be dead.</h1>
         <Image
           living={props.selectedTam.living}/>
       </div>

@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Rest(props) {
+
+  function handleButtonClick() {
+    props.onRestButtonClick(props.selectedTamId);
+  }
+
   return(
     <div>
-      <button onClick={props.onRestButtonClick}>Rest</button>
+      <button onClick={handleButtonClick}>Rest</button>
     </div>
   );
 }

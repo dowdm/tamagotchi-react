@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Play(props) {
+
+  function handleButtonClick() {
+    props.onPlayButtonClick(props.selectedTamId);
+  }
+
   return(
     <div>
-      <button onClick={props.onPlayButtonClick}>Play</button>
+      <button onClick={handleButtonClick}>Play</button>
     </div>
   );
 }

@@ -2,13 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Feed(props) {
-  return(
+
+  function handleButtonClick() {
+    console.log(props.selectedTamId);
+    props.onFeedButtonClick(props.selectedTamId);
+  }
+
+  return (
     <div>
-      <button onClick={props.onFeedButtonClick}>Feed</button>
+      <button onClick={handleButtonClick}>Feed</button>
     </div>
   );
 }
+
 Feed.propTypes = {
   onFeedButtonClick: PropTypes.func,
 };
+
 export default Feed;

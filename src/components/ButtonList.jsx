@@ -14,15 +14,20 @@ function ButtonList(props) {
           justify-content: space-around;
         `}</style>
       <Feed
-        onFeedButtonClick = {props.onFeedButtonClick} />
+        onFeedButtonClick = {props.onFeedButtonClick}
+        selectedTamId = {props.selectedTamId} />
       <Rest
-        onRestButtonClick = {props.onRestButtonClick}/>
+        onRestButtonClick = {props.onRestButtonClick}
+        selectedTamId = {props.selectedTamId} />
       <Play
-        onPlayButtonClick = {props.onPlayButtonClick}/>
+        onPlayButtonClick = {props.onPlayButtonClick}
+        selectedTamId = {props.selectedTamId} />
       <Wash
-        onWashButtonClick = {props.onWashButtonClick}/>
+        onWashButtonClick = {props.onWashButtonClick}
+        selectedTamId = {props.selectedTamId}/>
       <Blood
-        onBloodButtonClick = {props.onBloodButtonClick}/>
+        onBloodButtonClick = {props.onBloodButtonClick}
+        selectedTamId = {props.selectedTamId}/>
     </div>
   );
 }

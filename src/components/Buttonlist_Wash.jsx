@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Wash(props) {
+  function handleButtonClick() {
+    props.onWashButtonClick(props.selectedTamId);
+  }
   return(
     <div>
-      <button onClick={props.onWashButtonClick}>Wash</button>
+      <button onClick={handleButtonClick}>Wash</button>
     </div>
   );
 }
