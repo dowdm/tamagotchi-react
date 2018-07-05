@@ -111,9 +111,9 @@ class App extends React.Component {
 
   render() {
     let optionalSelectedTamContent = null;
-     if (this.state.selectedTam != null){
-       optionalSelectedTamContent =  <TamDetail selectedTam={this.state.masterTamList[this.state.selectedTam]}/>;
-     }
+    if (this.state.selectedTam != null){
+      optionalSelectedTamContent =  <TamDetail selectedTam={this.state.masterTamList[this.state.selectedTam]}/>;
+    }
     return (
       <div>
         {/* <style jsx global>{`
